@@ -1,0 +1,249 @@
+blog
+├─.gitignore
+├─deploy.sh
+├─package-lock.json
+├─package.json
+├─tree.text
+├─src
+|  ├─_posts
+|  |   ├─2020-06-13 git常用命令.md
+|  |   ├─2020-06-13 mac系统npm权限问题.md
+|  |   └2020-06-13 markdown常用语法.md
+|  ├─.vuepress
+|  |     ├─config.js
+|  |     ├─public
+|  |     |   ├─assest
+|  |     |   |   ├─image
+|  |     |   |   |   └photo.jpeg
+|  |     ├─dist
+|  |     |  ├─404.html
+|  |     |  ├─index.html
+|  |     |  ├─posts
+|  |     |  |   ├─index.html
+|  |     |  |   ├─tags
+|  |     |  |   |  ├─git.html
+|  |     |  |   |  ├─index.html
+|  |     |  |   |  └npm.html
+|  |     |  |   ├─categories
+|  |     |  |   |     ├─git.html
+|  |     |  |   |     ├─index.html
+|  |     |  |   |     └npm.html
+|  |     |  |   ├─2020
+|  |     |  |   |  ├─06
+|  |     |  |   |  | ├─13
+|  |     |  |   |  | | ├─_13-git常用命令.html
+|  |     |  |   |  | | └_13-mac系统npm权限问题.html
+|  |     |  ├─assets
+|  |     |  |   ├─js
+|  |     |  |   | ├─1.b9889e45.js
+|  |     |  |   | ├─10.a835de53.js
+|  |     |  |   | ├─11.c50511e5.js
+|  |     |  |   | ├─12.7c805693.js
+|  |     |  |   | ├─13.c2e0e163.js
+|  |     |  |   | ├─14.857594f7.js
+|  |     |  |   | ├─15.14bf450f.js
+|  |     |  |   | ├─3.0cfd55dc.js
+|  |     |  |   | ├─4.e4cf3c7f.js
+|  |     |  |   | ├─5.0f4d1b7a.js
+|  |     |  |   | ├─6.678acf43.js
+|  |     |  |   | ├─7.6debe6e9.js
+|  |     |  |   | ├─8.2108b3ba.js
+|  |     |  |   | ├─9.4409da7c.js
+|  |     |  |   | └app.e255a63f.js
+|  |     |  |   ├─css
+|  |     |  |   |  └0.styles.28a34285.css
+|  |     |  ├─assest
+|  |     |  |   ├─image
+|  |     |  |   |   └photo.jpeg
+|  |     |  ├─.git
+|  |     |  |  ├─COMMIT_EDITMSG
+|  |     |  |  ├─HEAD
+|  |     |  |  ├─config
+|  |     |  |  ├─description
+|  |     |  |  ├─index
+|  |     |  |  ├─refs
+|  |     |  |  |  ├─tags
+|  |     |  |  |  ├─heads
+|  |     |  |  |  |   └master
+|  |     |  |  ├─objects
+|  |     |  |  |    ├─pack
+|  |     |  |  |    ├─info
+|  |     |  |  |    ├─fd
+|  |     |  |  |    | └5dcbed5776c207c845be49e986941e2a795b21
+|  |     |  |  |    ├─fc
+|  |     |  |  |    | └93656587eb4a23450a9af42fd8e52225059f7b
+|  |     |  |  |    ├─f4
+|  |     |  |  |    | └4c0a04ec47810c3c6e815091d10ebd01856c66
+|  |     |  |  |    ├─f0
+|  |     |  |  |    | └5cf8fec129f40b6253ef94f361bcd5aff0c281
+|  |     |  |  |    ├─ed
+|  |     |  |  |    | └2a3c54d209a6981ca4d1a3d10acbfbf46d26a9
+|  |     |  |  |    ├─e9
+|  |     |  |  |    | └9c94af012f871bcea54692402368caa7d67768
+|  |     |  |  |    ├─e6
+|  |     |  |  |    | └db198decc011b908d50fd48c22a4116d84126b
+|  |     |  |  |    ├─e0
+|  |     |  |  |    | └3cbbb79aa86e97cbdd157c9a53040d759aa3f7
+|  |     |  |  |    ├─df
+|  |     |  |  |    | └e6ca837e1f8b6a18131ea542afe230c16ebe87
+|  |     |  |  |    ├─dc
+|  |     |  |  |    | └55bdaaa6aac8c7f8be8ede4ad8e5ae9e195cae
+|  |     |  |  |    ├─bf
+|  |     |  |  |    | └8c30842220bdeb609aac78b5ee7e1171814493
+|  |     |  |  |    ├─be
+|  |     |  |  |    | └91d77b95b4ac483a94c0664315972714917a78
+|  |     |  |  |    ├─bc
+|  |     |  |  |    | └5e3562dcf52a0005a171a0243236ae4441e2f9
+|  |     |  |  |    ├─ac
+|  |     |  |  |    | └698c23610e544f262c197c9ac6c3fba607185d
+|  |     |  |  |    ├─90
+|  |     |  |  |    | └b03fb9b4a8134a7438f9cea38af72c189b8521
+|  |     |  |  |    ├─86
+|  |     |  |  |    | └deec816202a44aa08842ebe7626b3dbc5e5b1e
+|  |     |  |  |    ├─85
+|  |     |  |  |    | └99c55adcb31086bc65bc9dfbce05fa219fcfc5
+|  |     |  |  |    ├─7f
+|  |     |  |  |    | └bcba76f436e1b52e8b14fbf430f58c9bfb6715
+|  |     |  |  |    ├─7d
+|  |     |  |  |    | └4e3b68943917f53396557034bf2a2eabdbd6a7
+|  |     |  |  |    ├─72
+|  |     |  |  |    | └3f43173a8fe5a44639f8aa6b2cf54b4fdb2dc8
+|  |     |  |  |    ├─70
+|  |     |  |  |    | └69506dee5fba3d1c8d22ef5bf43bb6f8d849db
+|  |     |  |  |    ├─6a
+|  |     |  |  |    | ├─b97afe120e76a2b2ced82769c42b5989073ea8
+|  |     |  |  |    | └dd80467b4d1b25315ac293b69708c8dd59c23f
+|  |     |  |  |    ├─67
+|  |     |  |  |    | └a1d69f8a9393590b3d53c51155749257055ad5
+|  |     |  |  |    ├─66
+|  |     |  |  |    | └e5663ad8d6da90bcb93e86cda97ed48679ef7d
+|  |     |  |  |    ├─60
+|  |     |  |  |    | └16b82b07033dedce5275bc5d6ab6a21370c7af
+|  |     |  |  |    ├─59
+|  |     |  |  |    | └560f8cd4237ad990b6137edadb797e5e41df80
+|  |     |  |  |    ├─58
+|  |     |  |  |    | └e2f40b0fe706b8ce79551430d872a30dd8b7f3
+|  |     |  |  |    ├─4b
+|  |     |  |  |    | └b29bbb9e93c354416506f46761e644396c5c91
+|  |     |  |  |    ├─4a
+|  |     |  |  |    | └d485f953cdd338951f36f8bdaa3ffbf4311bdb
+|  |     |  |  |    ├─49
+|  |     |  |  |    | ├─4498c92fae849ce34a301b400636d7ff9afc02
+|  |     |  |  |    | └c00b047a3f2afff21ab452cbad8baf191d1a9b
+|  |     |  |  |    ├─46
+|  |     |  |  |    | └548b1224ce44c290a3813cf0af61a50d50c033
+|  |     |  |  |    ├─44
+|  |     |  |  |    | └0ee79751104489b22aaf57f39514b0d5f1e51f
+|  |     |  |  |    ├─30
+|  |     |  |  |    | └a053133b56c3d9550cda9c59be52dbec93cf40
+|  |     |  |  |    ├─2f
+|  |     |  |  |    | └d641ee63cce71f8879b162ccc59eeebadfd89d
+|  |     |  |  |    ├─14
+|  |     |  |  |    | └921b3edf735b7a115ccfc99b7c32d58591f8be
+|  |     |  |  |    ├─0b
+|  |     |  |  |    | └4bdf2f3e9d8eb22d1e3bf490517b892ab9ee76
+|  |     |  |  |    ├─0a
+|  |     |  |  |    | └144759b72cbedc8c9994b11b07e3ba83178d9a
+|  |     |  |  |    ├─09
+|  |     |  |  |    | └a3da5fe11a97742f7159be646144254146cb1b
+|  |     |  |  |    ├─06
+|  |     |  |  |    | └88af4f7f37e272c0f2af16f209a458c8ec0bd7
+|  |     |  |  ├─logs
+|  |     |  |  |  ├─HEAD
+|  |     |  |  |  ├─refs
+|  |     |  |  |  |  ├─heads
+|  |     |  |  |  |  |   └master
+|  |     |  |  ├─info
+|  |     |  |  |  └exclude
+|  |     |  |  ├─hooks
+|  |     |  |  |   ├─applypatch-msg.sample
+|  |     |  |  |   ├─commit-msg.sample
+|  |     |  |  |   ├─fsmonitor-watchman.sample
+|  |     |  |  |   ├─post-update.sample
+|  |     |  |  |   ├─pre-applypatch.sample
+|  |     |  |  |   ├─pre-commit.sample
+|  |     |  |  |   ├─pre-merge-commit.sample
+|  |     |  |  |   ├─pre-push.sample
+|  |     |  |  |   ├─pre-rebase.sample
+|  |     |  |  |   ├─pre-receive.sample
+|  |     |  |  |   ├─prepare-commit-msg.sample
+|  |     |  |  |   └update.sample
+├─.vscode
+|    └settings.json
+├─.git
+|  ├─COMMIT_EDITMSG
+|  ├─HEAD
+|  ├─config
+|  ├─description
+|  ├─index
+|  ├─refs
+|  |  ├─tags
+|  |  ├─remotes
+|  |  |    ├─origin
+|  |  |    |   └master
+|  |  ├─heads
+|  |  |   └master
+|  ├─objects
+|  |    ├─pack
+|  |    ├─info
+|  |    ├─fc
+|  |    | └93656587eb4a23450a9af42fd8e52225059f7b
+|  |    ├─ed
+|  |    | └2a3c54d209a6981ca4d1a3d10acbfbf46d26a9
+|  |    ├─ca
+|  |    | └e4fcfdd81162fe67b02dfa3a89904f24991340
+|  |    ├─c5
+|  |    | └d4f12140e701978cf8a9568f3724d43d8d87fd
+|  |    ├─be
+|  |    | └91d77b95b4ac483a94c0664315972714917a78
+|  |    ├─b2
+|  |    | └efe92622d56aa785781cd19e473b2c8e9c2576
+|  |    ├─a9
+|  |    | └35e49845b41c825a066685c2da407d5549359e
+|  |    ├─9e
+|  |    | └10859c3d3432931b505fedde900f5a05125974
+|  |    ├─7a
+|  |    | └eeecc9142831262642a504dc26caab418af036
+|  |    ├─68
+|  |    | └571208dad7349c3a58e9b68f9955d0c0927a85
+|  |    ├─5f
+|  |    | └d60241a20e1a92273911d6a59697b17b5486f0
+|  |    ├─5e
+|  |    | └44634da7518199b110709207353f5e824a4e80
+|  |    ├─59
+|  |    | └14333665005abad39698dd9c99e1d91760df91
+|  |    ├─52
+|  |    | └c4a47fba44c74091679e935930aede250b1a4b
+|  |    ├─4c
+|  |    | └a6f13ba4c8ec222420415b301807181747fd0d
+|  |    ├─1e
+|  |    | └85de94e5154a0012c29cfd0f915c8cc67c8da2
+|  |    ├─16
+|  |    | └31c94be7b021d1924d141a155aee6e6905a819
+|  |    ├─11
+|  |    | └031c899f651179237fab7f0cb9531553385e8b
+|  |    ├─04
+|  |    | └b506b1e6b4dfc41c7e3035ef31a8668d43c8d5
+|  ├─logs
+|  |  ├─HEAD
+|  |  ├─refs
+|  |  |  ├─remotes
+|  |  |  |    ├─origin
+|  |  |  |    |   └master
+|  |  |  ├─heads
+|  |  |  |   └master
+|  ├─info
+|  |  └exclude
+|  ├─hooks
+|  |   ├─applypatch-msg.sample
+|  |   ├─commit-msg.sample
+|  |   ├─fsmonitor-watchman.sample
+|  |   ├─post-update.sample
+|  |   ├─pre-applypatch.sample
+|  |   ├─pre-commit.sample
+|  |   ├─pre-merge-commit.sample
+|  |   ├─pre-push.sample
+|  |   ├─pre-rebase.sample
+|  |   ├─pre-receive.sample
+|  |   ├─prepare-commit-msg.sample
+|  |   └update.sample
