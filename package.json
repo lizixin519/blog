@@ -1,0 +1,23 @@
+{
+  "name": "blog",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vuepress dev src",
+    "build": "vuepress build src",
+    "deploy": "bash deploy.sh" 
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "vue-class-component": "^7.2.3",
+    "vuepress": "^1.5.1",
+    "vuepress-theme-meteorlxy": "^1.9.0"
+  },
+  "dependencies": {
+    "@vssue/api-github-v3": "^1.4.4",
+    "@vssue/vuepress-plugin-vssue": "^1.4.6"
+  }
+}
