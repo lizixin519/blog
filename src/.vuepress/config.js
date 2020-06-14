@@ -2,7 +2,8 @@ module.exports = {
 	title: '李紫鑫',
 	description: '懒是第一生产力',
 	head: [
-		['link', { rel: 'icon', href: '/assest/image/photo.jpeg' }]
+		['link', { rel: 'icon', href: '/assest/image/logo.png' }],
+		['meta', { name: "viewport", content: "width=device-width, initial-scale=1, user-scalable=no, minimal-ui"}]
 	],
 	theme: 'meteorlxy',
 	themeConfig: {
@@ -11,7 +12,7 @@ module.exports = {
 			description: '信奉自由',
 			email: 'lizixin519@163.com',
 			location: 'beijing, China',
-			avatar: '/assest/image/photo.jpeg',
+			avatar: '/assest/image/logo.png',
 			sns: {
 				github: {
 					account: 'lizixin',
