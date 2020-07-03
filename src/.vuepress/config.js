@@ -31,8 +31,7 @@ module.exports = {
 			poweredByTheme: false,
 			// 添加自定义 footer (支持 HTML)
 			custom: 'Copyright 2020-present <a href="https://github.com/lizixin519" target="_blank">lizixin</a> | MIT License',
-		  },
-	  
+		},
 		infoCard: {
 			// 卡片 header 的背景，可以使用图片，或者随机变化的图案（geopattern）
 			headerBackground: {
@@ -56,6 +55,18 @@ module.exports = {
 			// 是否允许主题自动添加 Posts 页面 (url: /posts/)
 			posts: true,
 		},
-		comments: false
+		comments: true,
+		plugins: [
+			'@vssue/vuepress-plugin-vssue': {
+				// 设置 `platform` 而不是 `api`
+				platform: 'github',
+				// 其他的 Vssue 配置，里面的值
+				owner: 'lizixin519',
+				repo: 'lizixin519.github.io',
+				clientId: '6cb833afa3ebf684fca9',
+				clientSecret: '8367c385fef538bdbfe0d06430dbd8b93ff0e61c',
+			},
+			'vuepress-plugin-baidu-autopush'
+		]
 	}
 }
