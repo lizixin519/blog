@@ -57,21 +57,33 @@ module.exports = {
 		},
 		comments: true,
 		plugins: [
-			['@vssue/vuepress-plugin-vssue', {
-					// 设置 `platform` 而不是 `api`
-					platform: 'github',
-					// 其他的 Vssue 配置，里面的值
-					owner: 'lizixin519',
-					repo: 'https://github.com/lizixin519/lizixin519.github.io',
-					clientId: '6cb833afa3ebf684fca9',
-					clientSecret: '8367c385fef538bdbfe0d06430dbd8b93ff0e61c'
-			}],
-			['vuepress-plugin-baidu-autopush'],
+			'vuepress-plugin-baidu-autopush',
+			'@vuepress/back-to-top',
 			['vuepress-plugin-code-copy', true],
+			'@vuepress/medium-zoom',
 			['copyright', {
-        noCopy: true, // 选中的文字将无法被复制
-        minLength: 100, // 如果长度超过 100 个字符
-      }]
-		]
+				noCopy: true, // 选中的文字将无法被复制
+				minLength: 100, // 如果长度超过 100 个字符
+			}]
+		],
+		// plugins: [
+		// 	// ['@vssue/vuepress-plugin-vssue', {
+		// 	// 		// 设置 `platform` 而不是 `api`
+		// 	// 		platform: 'github',
+		// 	// 		// 其他的 Vssue 配置，里面的值
+		// 	// 		owner: 'lizixin519',
+		// 	// 		repo: 'https://github.com/lizixin519/lizixin519.github.io',
+		// 	// 		clientId: '6cb833afa3ebf684fca9',
+		// 	// 		clientSecret: '8367c385fef538bdbfe0d06430dbd8b93ff0e61c'
+		// 	// }],
+		// 	['vuepress-plugin-baidu-autopush'],
+		// 	['vuepress-plugin-code-copy', true],
+		// 	['@vuepress/back-to-top'],
+		// 	['@vuepress/medium-zoom'],
+		// 	['copyright', {
+    //     noCopy: true, // 选中的文字将无法被复制
+    //     minLength: 100, // 如果长度超过 100 个字符
+    //   }]
+		// ]
 	}
 }

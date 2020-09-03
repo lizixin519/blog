@@ -12,6 +12,8 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@vuepress/plugin-back-to-top": "^1.0.0-rc.1",
+    "@vuepress/plugin-medium-zoom": "^1.0.0-rc.1",
     "vue-class-component": "^7.2.3",
     "vuepress": "^1.5.1",
     "vuepress-plugin-baidu-autopush": "^1.0.1",
