@@ -17,6 +17,10 @@ module.exports = {
 				github: {
 					account: 'lizixin',
 					link: 'https://github.com/lizixin519',
+				},
+				juejin: {
+					account: 'lizixin',
+					link: 'https://juejin.im/user/254742430757645'
 				}
 			}
 		},
@@ -57,9 +61,9 @@ module.exports = {
 		},
 		comments: true,
 		plugins: [
+			['vuepress-plugin-code-copy', true],
 			'vuepress-plugin-baidu-autopush',
 			'@vuepress/back-to-top',
-			['vuepress-plugin-code-copy', true],
 			'@vuepress/medium-zoom',
 			['copyright', {
 				noCopy: true, // 选中的文字将无法被复制

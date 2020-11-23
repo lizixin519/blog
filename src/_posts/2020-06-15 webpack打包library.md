@@ -14,7 +14,7 @@ title: webpack打包library
 ## 安装
 第一步首先安装webpack
 
-```
+```shell
 npm i webpack webpack-cli -D
 ```
 
@@ -24,7 +24,7 @@ npm i webpack webpack-cli -D
 
 基本配置如下
 
-```
+```javascript
 module.exports = {
   mode: 'production', // 此处我们选取选取生产环境
   entry: './index.js',
@@ -40,7 +40,7 @@ module.exports = {
 
 此处的output为关键，我们要设置libraryTarget为'umd', 这样打出来的包的代码
 
-```
+```javascript
 (function webpackUniversalModuleDefinition(root, factory) {
 	if(typeof exports === 'object' && typeof module === 'object')
 		module.exports = factory();
@@ -56,7 +56,7 @@ module.exports = {
 ```
 这样可以支持以下几种模式的引用
 
-```
+```javascript
 1. import xxx from 'xxx';
 2. let xxx = require('xxx');
 3. define();
@@ -84,13 +84,13 @@ module.exports = {
 使用babel-loader 配合@babel/transfrom-run-time  @babel/preset-env @babel/runtime-corejs2来处理
 
 安装
-```
+```shell
 npm i babel-loader 配合@babel/transfrom-run-time  @babel/preset-env @babel/runtime-corejs2 -D
 ```
 
 新建.babelrc文件,配置如下
 
-```
+```json
 {
 	"presets": [
 		[
