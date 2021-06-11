@@ -2,7 +2,7 @@
 category: rollup
 tags:
   - rollup
-date: 2020-06-13
+date: 2021-06-10
 title: rollup打包react组件
 ---
 
@@ -10,14 +10,14 @@ title: rollup打包react组件
 rollup打包react组件
 <!-- more -->
 
-## 为什么选用rollup
+## 1. 为什么选用rollup
 
 相较于webpack，rollup可以打出esmodule的包，能更好的支持tree-shaking,而webpack打出的umd格式的包体积略大，但是项目如果有特别复杂的图片以及一些require路径，则用rollup可能配置起来会很麻烦,这时建议使用webpack。
 总的来说，还是根据业务需求来确定打包工具的使用。
 
-## rollup基本概念
+## 2. rollup基本概念
 
-### 入口
+### 2.1. 入口
 
 rollup和webpack一样，会从入口文件开始进行依赖分析，然后进行打包构建
 
@@ -28,7 +28,7 @@ export default {
 }
 ```
 
-### 出口
+### 2.2. 出口
 
 指定rollup构建完成之后的目录，
 
@@ -55,7 +55,7 @@ export default {
 * iife – 一个自动执行的功能，适合作为`<script>`标签。（如果要为应用程序创建一个捆绑包，您可能想要使用它，因为它会使文件大小变小。）
 * umd – 通用模块定义，以amd，cjs 和 iife 为一体
 
-### external
+### 2.3. external
 
 打包时不将三方包打进包中，而是继续以引用的方式存在
 
@@ -74,7 +74,7 @@ export default {
 }
 ```
 
-### plugin
+### 2.4. plugin
 
 插件对象是一个数组，比如处理json文件的插件@rollup/plugin-json
 
@@ -98,13 +98,13 @@ export default {
 }
 ```
 
-## react组件库打包
+## 3. react组件库打包
 
 react项目使用jsx语法，以及需要将es6转化为es5代码，需要配置babel.编译出cjs,以及esm格式的包。
 
 > 注意：此处打包格式为esm以及cjs,需在package.json中对应main(cjs格式)，module(esm格式)字段
 
-### rollup.config.json配置
+### 3.1. rollup.config.json配置
 
 ```js
 // rollup.config.js
@@ -133,6 +133,12 @@ import typescript from 'rollup-plugin-typescript2';
 import { terser } from 'rollup-plugin-terser';
 // 处理json问题
 import json from '@rollup/plugin-json';
+// 配置别名
+import alias from '@rollup/plugin-alias';
+// 拷贝文件
+import copy from 'rollup-plugin-copy';
+// 打包前删除原有目录
+import del from 'rollup-plugin-delete';
 
 import pkg from './package.json';
 const getPath = (_path) => path.resolve(__dirname, _path);
@@ -152,6 +158,7 @@ export default {
     context: 'window',
     external: [...Object.keys(pkg.dependencies || {}), ...Object.keys(pkg.peerDependencies || {})],
     plugins: [
+        del(),
         builtins(),
         json(),
         url(),
@@ -169,6 +176,11 @@ export default {
             extract: false,
             plugins: [autoprefixer],
         }),
+        alias({
+            entries: {
+                src: './src',
+            },
+        }),
         typescript({
             tsconfig: getPath('./tsconfig.json'), // 导入本地ts配置
             extensions: ['.ts', 'tsx'],
@@ -180,13 +192,16 @@ export default {
         resolve(),
         commonjs(),
         terser(),
+        copy({
+            targets: [{ src: 'src/public', dest: 'dist/' }],
+        }),
         filesize(),
     ],
 };
 
 ```
 
-### babel配置
+### 3.2. babel配置
 
 react组件需要编译jsx语法，以及es6语法, .babelrc文件配置如下
 
@@ -212,12 +227,16 @@ react组件需要编译jsx语法，以及es6语法, .babelrc文件配置如下
 
 ```
 
-## 遇到的问题
+## 4. 遇到的问题
 
-1. 编译es6代码失效的问题
+### 4.1. 编译es6代码失效的问题
 
 由于没注意tsconfig中的target为esnext,导致es6代码未编译，组件引入报错
 
 ```js
 Missing class properties transform
 ```
+
+### 4.2. iconfont require文件不打包问题
+
+由于解析不到require路径问题，此处暂用copy文件的方式将文件拷贝到dist文件中，使用rollup-plugin-copy插件
