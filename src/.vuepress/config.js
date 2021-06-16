@@ -6,22 +6,12 @@ module.exports = {
         ['meta', { name: 'viewport', content: 'width=device-width, initial-scale=1, user-scalable=no, minimal-ui' }],
     ],
     plugins: [
-        ['vuepress-plugin-code-copy', true],
-        'vuepress-plugin-baidu-autopush',
-        [
-            '@vuepress/active-header-links',
-            {
-                sidebarLinkSelector: '.sidebar-link',
-                headerAnchorSelector: '.header-anchor',
-            },
-        ],
         '@vuepress/back-to-top',
         '@vuepress/medium-zoom',
         [
-            'copyright',
+            'sitemap',
             {
-                noCopy: true, // 选中的文字将无法被复制
-                minLength: 100, // 如果长度超过 100 个字符
+                hostname: 'https://lizixin519.github.io',
             },
         ],
         [
@@ -37,6 +27,15 @@ module.exports = {
                 autoCreateIssue: true, // 自动创建评论，默认是false，最好开启，这样首次进入页面的时候就不用去点击创建评论的按钮了。
             },
         ],
+        [
+            'copyright',
+            {
+                noCopy: true, // 选中的文字将无法被复制
+                minLength: 100, // 如果长度超过 100 个字符
+            },
+        ],
+        'vuepress-plugin-baidu-autopush',
+        ['vuepress-plugin-code-copy', true],
     ],
     theme: 'meteorlxy',
     themeConfig: {
