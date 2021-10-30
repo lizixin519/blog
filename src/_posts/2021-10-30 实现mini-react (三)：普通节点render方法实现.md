@@ -1,11 +1,12 @@
 ---
-
-category: 实现 mini-react(三)：普通节点render方法实现
-tags: - react
+category: 实现 mini-react(三)：普通节点 render 方法实现
+tags:
+    - react
 date: 2021-10-29
-title: 实现 mini-react(三)：普通节点render方法实现
+title: 实现 mini-react(三)：普通节点 render 方法实现
+---
 
----实现 mini-react(三)：普通节点 render 方法实现
+实现 mini-react(三)：普通节点 render 方法实现
 
 <!-- more -->
 

@@ -1,20 +1,14 @@
-<!--
- * @Author: your name
- * @Date: 2021-10-30 15:21:15
- * @LastEditTime: 2021-10-30 15:55:03
- * @LastEditors: your name
- * @Description: In User Settings Edit
- * @FilePath: /blog/src/_posts/2021-10-30 实现mini-react (四)： 组件render方法实现.md
--->
-
 ---
-
 category: 实现 mini-react(四)：组件 render 方法实现
-tags: - react
+tags:
+    - react
 date: 2021-10-29
 title: 实现 mini-react(四)：组件 render 方法实现
+---
 
----实现 mini-react(四)：组件 render 方法实现
+实现 mini-react(四)：组件 render 方法实现
+
+<!-- more -->
 
 上一章已经把普通节点的 render 方法实现了，下面我们来实现组件的 render 方法。
 
@@ -87,3 +81,34 @@ function buildClassComponent(virtualDOM) {
 ```
 
 我们通过 virtualDOM 的 type 方法执行来获取虚拟 DOM 来进行处理，因为会存在子节点也是组件的清空，所以这块需要做下递归处理。如果为普通节点则调用处理普通节点的方法`mountNativeElement`
+
+此时还有几个问题
+
+1. 项目中还未实现 class 类组件
+2. 组件的 props 并未传递过来
+
+针对问题 1 我们来实现一个简单的 class
+
+```js
+// component.js
+export default class Component {
+    constructor(props) {
+        this.props = props;
+    }
+}
+```
+
+针对问题 2 其实很简单我们在执行`virtualDOM.type`方法的时候将 props 传入进去即可，修改`mountComponent.js`中的两个函数如下，
+
+```js
+function buildFunctionComponent(virtualDom) {
+    return virtualDom.type(virtualDom.props || {});
+}
+
+function buildClassComponent(virtualDom) {
+    const component = new virtualDom.type(virtualDom.props || {});
+    return component.render();
+}
+```
+
+现在我们实现了组件的 render 方法，下一章我们将介绍 diff 算法的实现。

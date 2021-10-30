@@ -1,20 +1,12 @@
-<!--
- * @Author: your name
- * @Date: 2021-10-29 21:35:44
- * @LastEditTime: 2021-10-29 22:19:02
- * @LastEditors: your name
- * @Description: In User Settings Edit
- * @FilePath: /blog/src/_posts/2021-10-29 实现mini-react（一）创建项目.md
--->
-
 ---
-
 category: 实现 mini-react(一)：创建项目
-tags: - react
+tags:
+    - react
 date: 2021-10-29
 title: 实现 mini-react(一)：创建项目
+---
 
----实现 mini-react(一)：创建项目
+实现 mini-react(一)：创建项目
 
 <!-- more -->
 
