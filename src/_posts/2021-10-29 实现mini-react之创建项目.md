@@ -1,7 +1,7 @@
 ---
 category: 实现 mini-react(一)：创建项目
 tags:
-    - react
+    - mini-react
 date: 2021-10-29
 title: 实现 mini-react(一)：创建项目
 ---

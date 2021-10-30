@@ -1,7 +1,7 @@
 ---
 category: 实现 mini-react(三)：普通节点 render 方法实现
 tags:
-    - react
+    - mini-react
 date: 2021-10-29
 title: 实现 mini-react(三)：普通节点 render 方法实现
 ---

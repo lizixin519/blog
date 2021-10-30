@@ -1,7 +1,7 @@
 ---
 category: 实现 mini-react(二)：createElement方法实现
 tags:
-    - react
+    - rmini-eact
     - babel
 date: 2021-10-29
 title: 实现 mini-react(二)：createElement方法实现
