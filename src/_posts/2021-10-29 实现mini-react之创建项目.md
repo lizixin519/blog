@@ -1,5 +1,5 @@
 ---
-category: 实现 mini-react(一)：创建项目
+category: mini-react
 tags:
     - mini-react
 date: 2021-10-29

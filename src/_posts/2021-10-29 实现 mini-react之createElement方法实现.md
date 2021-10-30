@@ -1,5 +1,5 @@
 ---
-category: 实现 mini-react(二)：createElement方法实现
+category: mini-react
 tags:
     - rmini-eact
     - babel
